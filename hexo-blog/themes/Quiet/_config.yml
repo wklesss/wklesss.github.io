@@ -8,7 +8,7 @@ author: wkless
 home_describe: life.
 # 网站关键字
 keyword: hexo , share
-is_article_img: true  #false是否开启文章背景图显示(随机图片)
+is_article_img: false  #false是否开启文章背景图显示(随机图片)
 # 网站描述
 web_description: 描述
 # 导航名称
@@ -55,7 +55,7 @@ bottomIcon:
     #图标    
     iconLink: 'https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png',
     #跳转链接    
-    toUrl: 'https://github.com/qiaobug'
+    toUrl: 'https://github.com/wklesss'
   }
 # 友情链接
 linksList:
