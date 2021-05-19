@@ -1,24 +1,24 @@
 # 网站标题
-title: Hexo主题-Quiet主题-Hexo扁平化主题安装
+title: kk 
 # 网站标题后缀
-suffix: Quiet
+suffix: Blog
 # 作者名称(会显示在首页文章下面)
-author: CHANGEQ
+author: wkless
 # 首页简介（显示在首页顶部Logo的那句话）
-home_describe: A COLLEGE STUDENT WITH IDEALS AND BELIEFS.
+home_describe: life.
 # 网站关键字
-keyword: hexo主题,hexo扁平化主题,Quiet主题
+keyword: hexo , share
 is_article_img: false  #false是否开启文章背景图显示(随机图片)
 # 网站描述
 web_description: 描述
 # 导航名称
 menus_title:
-  home: HOME
-  archive: ARCHIVE
-  categories: CATEGORIES
-  tags: TAGS
-  links: LINKS
-  about: ABOUT
+  主页: HOME
+  归档: ARCHIVE
+  分类: CATEGORIES
+  标签: TAGS
+  链接: LINKS
+  关于: ABOUT
 # 导航 （不建议修改）
 menus:
   home: /
