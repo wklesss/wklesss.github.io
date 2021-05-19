@@ -104,5 +104,5 @@ theme: Hacker
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/wklesss/wklesss.github.io
+  repo: git@github.com:wklesss/wklesss.github.io
   branch: master
