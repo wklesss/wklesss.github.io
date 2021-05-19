@@ -13,12 +13,12 @@ is_article_img: false  #false是否开启文章背景图显示(随机图片)
 web_description: 描述
 # 导航名称
 menus_title:
-  主页: HOME
-  归档: ARCHIVE
-  分类: CATEGORIES
-  标签: TAGS
-  链接: LINKS
-  关于: ABOUT
+  home: 主页
+  archive: 归档
+  categories: 分类
+  tags: 标签
+  links: 链接
+  about: 关于
 # 导航 （不建议修改）
 menus:
   home: /
@@ -75,3 +75,18 @@ picture:
   imgRadius: "10px"
 #默认的cover (默认缩略图) 在没有填写（这里可以替换（可以是api也可以是固定的图））
 default_cover: https://api.ixiaowai.cn/gqapi/gqapi.php
+
+# 我的配置
+highlight:
+  enable: true
+  line_number: false
+  auto_detect: true
+  tab_replace: ''
+  wrap: true
+  hljs: true
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
