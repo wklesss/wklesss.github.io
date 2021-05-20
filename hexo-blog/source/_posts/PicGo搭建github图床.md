@@ -3,7 +3,7 @@ title: PicGo搭建github图床
 date: 2021-05-19 01:24:37
 categories: 工具使用
 tags: [图床,github]
-cover: https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210520184520.jpeg
+cover:  'https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210520184520.jpeg'
 ---
 
 
