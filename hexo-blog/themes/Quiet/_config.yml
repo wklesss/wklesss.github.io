@@ -76,17 +76,4 @@ picture:
 #默认的cover (默认缩略图) 在没有填写（这里可以替换（可以是api也可以是固定的图））
 default_cover: https://api.ixiaowai.cn/gqapi/gqapi.php
 
-# 我的配置
-highlight:
-  enable: true
-  line_number: false
-  auto_detect: true
-  tab_replace: ''
-  wrap: true
-  hljs: true
-prismjs:
-  enable: false
-  preprocess: true
-  line_number: true
-  tab_replace: ''
 
