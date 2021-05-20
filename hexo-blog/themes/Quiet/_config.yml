@@ -44,8 +44,8 @@ topIcon:
 tagsNum: 1000
 # 网页访问统计
 web_analytics:  
-  enable: false #需要改为true
-  baidu: 4b5fe1472f22fa  # （替换）百度统计的 Key，参见 https://tongji.baidu.com/sc-web/10000033910/home/site/getjs?siteId=13751376 代码获取中 hm.js? 后边的字符串
+  enable: true #需要改为true
+  baidu: c1d0c59064c43461069adb99003eabbe  # （替换）百度统计的 Key，参见 https://tongji.baidu.com/sc-web/10000033910/home/site/getjs?siteId=13751376 代码获取中 hm.js? 后边的字符串
 # 底部显示的图标（github 或者其他）
 bottomIcon: 
   #可以多个
@@ -53,7 +53,7 @@ bottomIcon:
     #描述名称
     name: 'Github',
     #图标    
-    iconLink: 'https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png',
+    iconLink: 'https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210520185915.png',
     #跳转链接    
     toUrl: 'https://github.com/wklesss'
   }
