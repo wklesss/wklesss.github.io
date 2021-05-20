@@ -1,8 +1,9 @@
 ---
 title: 快速搭建多终端同步的hexo博客
 date: 2021-05-19 00:19:53
-categories: 博客
+categories: 工具使用
 tags: [hexo,github,blog]
+cover:  https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210520183938.jpeg
 ---
 最终实现的效果是在 GitHub 上只需要一个仓库，实现可在多终端同步自己的个人博客。
 
@@ -22,7 +23,7 @@ tags: [hexo,github,blog]
 
 在自己的主页上新建一个仓库，仓库的名字要和自己的用户名保持一致。如我的用户名是 kakadee, 那么仓库的名字应该是 kakadee.github.io。这样该仓库地址即默认作为你 git 的个人主页。其他选项按默认的进行。
 
-![1](https://raw.githubusercontent.com/wklesss/picture/master/img/20210519004925.png)
+![20210519004925](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210520182236.png)
 
 3. 从远程拉取仓库到本地
 
@@ -74,7 +75,7 @@ npm install hexo-deployer-git --save
 
 执行完毕后文件夹如下：
 
-![55](https://raw.githubusercontent.com/wklesss/picture/master/img/20210519005145.png)
+![20210519005145](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210520182320.png)
 
 可以看到原来的`.git`文件夹已经不见了，所以这时候要将`.git`文件由`.origingit`复制回来。
 
@@ -86,7 +87,7 @@ cp -r .origingit .git
 
 ### 修改_config.yml 中的 deploy 参数
 
-![66](https://raw.githubusercontent.com/wklesss/picture/master/img/20210519005151.png)
+![20210519005151](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210520182401.png)
 
 repository 中填写自己 git 仓库的地址（https 的也可以）。  
 branch 应该设置为 master.  

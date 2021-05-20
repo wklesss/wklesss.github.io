@@ -1,7 +1,9 @@
 ---
 title: markdown
 date: 2018-05-05 23:11:32
+categories: 工具使用
 tags: [markdown,工具]
+cover: https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210520184426.jpeg
 ---
 Markdown 编辑器语法指南
 基本技巧
