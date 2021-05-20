@@ -2,7 +2,10 @@
 layout: 快速搭建多终端同步的
 title: 静态博客
 date: 2021-05-19 00:19:53
-tags:
+categories: 博客
+tags: 
+- hexo
+- github
 ---
 最终实现的效果是在 GitHub 上只需要一个仓库，实现可在多终端同步自己的个人博客。
 
