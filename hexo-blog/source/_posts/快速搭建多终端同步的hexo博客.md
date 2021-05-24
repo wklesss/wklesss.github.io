@@ -1,9 +1,13 @@
 ---
 title: 快速搭建多终端同步的hexo博客
-date: 2021-05-19 00:19:53
 categories: 工具使用
-tags: [hexo,github,blog]
-cover:  'https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210520183938.jpeg'
+tags:
+  - hexo
+  - github
+  - blog
+cover: 'https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210520183938.jpeg'
+abbrlink: dc1a6467
+date: 2021-05-19 00:19:53
 ---
 最终实现的效果是在 GitHub 上只需要一个仓库，实现可在多终端同步自己的个人博客。
 

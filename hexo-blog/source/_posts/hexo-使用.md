@@ -1,9 +1,10 @@
 ---
 title: hexo  使用
-date: 2021-05-19 22:58:38
 categories: 工具使用
 tags: hexo
 cover: 'https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210520184349.jpeg'
+abbrlink: 65995f2c
+date: 2021-05-19 22:58:38
 ---
 ##  常见命令
 

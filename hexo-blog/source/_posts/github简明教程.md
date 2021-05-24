@@ -1,9 +1,11 @@
 ---
 title: github简明教程
-date: 2021-05-24 19:28:18
 categories: 工具使用
 tags: github
-cover: 'https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/photo-1556075798-4825dfaaf498'
+cover: >-
+  https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/photo-1556075798-4825dfaaf498
+abbrlink: 48e7fa72
+date: 2021-05-24 19:28:18
 ---
 
 > 本文由 [简悦 SimpRead](http://ksria.com/simpread/) 转码， 原文地址 [www.runoob.com](https://www.runoob.com/w3cnote/git-guide.html)
