@@ -1,9 +1,12 @@
 ---
 title: 【study note】9.python类
-tags: [python]
-cover: 'https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/photo-1526379095098-d400fd0bf935'
-date: 2021-05-24 19:50:13
+tags:
+  - python
+cover: >-
+  https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/photo-1526379095098-d400fd0bf935
 categories: 学习笔记
+abbrlink: d2f57d73
+date: 2021-05-24 19:50:13
 ---
 
 > 本文由 [简悦 SimpRead](http://ksria.com/simpread/) 转码， 原文地址 [docs.python.org](https://docs.python.org/zh-cn/3/tutorial/classes.html)
