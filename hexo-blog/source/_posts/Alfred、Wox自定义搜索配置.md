@@ -1,9 +1,12 @@
 ---
 title: Alfred、Wox自定义搜索配置
-tags: [Alfred, Wox]
+tags:
+  - Alfred
+  - Wox
 cover: 'https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210618095957.jpeg'
-date: 2021-06-18 09:57:15
 categories: 工具使用
+abbrlink: b8326acb
+date: 2021-06-18 09:57:15
 ---
 
 > 本文由 [简悦 SimpRead](http://ksria.com/simpread/) 转码， 原文地址 [www.jianshu.com](https://www.jianshu.com/p/45b2aacd0b08)
