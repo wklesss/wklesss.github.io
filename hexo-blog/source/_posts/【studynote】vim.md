@@ -1,9 +1,11 @@
 ---
 title: 【study note】vim
-tags: [linux]
+tags:
+  - linux
 cover: 'https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210603112347.jfif'
-date: 2021-06-03 11:21:31
 categories: 学习笔记
+abbrlink: 20e858c0
+date: 2021-06-03 11:21:31
 ---
 
 > 本文由 [简悦 SimpRead](http://ksria.com/simpread/) 转码， 原文地址 [www.runoob.com](https://www.runoob.com/linux/linux-vim.html)
