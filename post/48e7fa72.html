@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		
+<title>github简明教程-Blog</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
+
+
+<meta name="keywords" content="github,">
+<meta name="description" content="">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+
+<!-- Baidu Analytics -->
+<script defer>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c1d0c59064c43461069adb99003eabbe";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+	<meta name="generator" content="Hexo 5.4.0"></head>
+
+	<body>
+		
+<link rel="stylesheet" href="/css/page.css">
+
+
+<link rel="stylesheet" href="/css/page_cente.css">
+
+
+<link rel="stylesheet" href="/css/atom-one-dark.css">
+
+
+<link rel="stylesheet" href="/css/header.css">
+
+	<div class="header">
+		<div class="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/image/logo.png" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										主页
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										归档
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										分类
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										标签
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/links">
+										链接
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										关于
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>wkless</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">主页</a>
+        </li>
+        
+        <li>
+            <a href="/archives">归档</a>
+        </li>
+        
+        <li>
+            <a href="/categories">分类</a>
+        </li>
+        
+        <li>
+            <a href="/tags">标签</a>
+        </li>
+        
+        <li>
+            <a href="/links">链接</a>
+        </li>
+        
+        <li>
+            <a href="/about">关于</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a target="_blank" rel="noopener" href="https://github.com/wklesss">
+            <img src="https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210520185915.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'
+    style='cursor: pointer;display: none; position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #333;opacity:0.5;z-index: 108;'>
+</div>
+<style>
+    .sidebar {
+        width: 0;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        z-index: 999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815)
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $(function () { $('.h-right-close>svg').click(function () { $('.sidebar').animate({ width: "66%" }, 500); $('.shelter').fadeIn("slow") }); $('.shelter').click(function (e) { $('.sidebar').animate({ width: "0" }, 500); $('.shelter').fadeOut("slow") }) })
+</script>
+		<script>
+			$(function () { $(window).scroll(function () { if ($(document).scrollTop() > 100) { $(".header-top").removeClass("header-move2"); $('.header-top').addClass('header-move1') } else { $(".header-top").removeClass("header-move1"); $('.header-top').addClass('header-move2') } }) });
+		</script>
+<div class="header-bg bg-content-img">
+    <div class="bg-content">
+        <ul class="tag">
+            
+            
+            <li><a href="/tags/github">github</a></li>
+            
+            
+        </ul>
+        <h1>github简明教程</h1>
+        <div class="article-info">
+            <div class="article-author">
+                
+                <svg t="1604839279282" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="2901" width="20" height="20">
+                    <path
+                        d="M513 956.3c-247.7 0-448-200.3-448-448S265.3 66.2 513 66.2s448 200.3 448 448-200.3 442.1-448 442.1z m0-830.9c-212.2 0-388.8 170.7-388.8 388.8C124.2 726.3 294.9 903 513 903c212.2 0 388.8-170.7 388.8-388.8S725.2 125.4 513 125.4z m0 430.2c-94.2 0-170.7-76.5-170.7-170.7S418.8 207.8 513 207.8s170.7 76.5 170.7 170.7S607.2 555.6 513 555.6z m0-289.1c-64.6 0-112 52.8-112 112s47.4 117.9 112 117.9 112-52.8 112-112-47.4-117.9-112-117.9z m0 689.8c-135.7 0-259-58.7-341.9-158.9l-11.8-17.8 11.8-17.8c76.5-117.9 206.2-188.5 347.8-188.5 135.7 0 265 64.6 341.9 182.6l11.8 17.8-11.8 17.8C778 897.1 648.7 956.3 513 956.3zM230.3 773.2C300.9 849.7 406.9 897 513 897c112 0 218.1-47.4 288.6-129.8-70.5-88.2-170.7-135.6-282.7-135.6s-218.1 53.3-288.6 141.6z"
+                        p-id="2902" fill="#ffffff"></path>
+                </svg>
+                
+                <span> <a href="">wkless</a></span>
+                <p>2021-05-24 19:28:18</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="article-content">
+    <div id="article" class="content">
+        <blockquote>
+<p>本文由 <a target="_blank" rel="noopener" href="http://ksria.com/simpread/">简悦 SimpRead</a> 转码， 原文地址 <a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/git-guide.html">www.runoob.com</a></p>
+</blockquote>
+<blockquote>
+<p>如果你是一枚 Coder，但是你不知道 Github，那么我觉的你就不是一个菜鸟级别的 Coder，因为你压根不是真正 Coder，你只是一个 Code 搬运工。</p>
+</blockquote>
+<p>如果你是一枚 Coder，但是你不知道 Github，那么我觉的你就不是一个菜鸟级别的 Coder，因为你压根不是真正 Coder，你只是一个 Code 搬运工。</p>
+<p>但是你如果已经在读这篇文章了，我觉的你已经知道 Github 了。</p>
+<p><strong>正是 Github，让社会化编程成为现实。</strong></p>
+<h3 id="什么是-Github"><a href="#什么是-Github" class="headerlink" title="什么是 Github?"></a>什么是 Github?</h3><p>github 是一个基于 git 的代码托管平台，付费用户可以建私人仓库，我们一般的免费用户只能使用公共仓库，也就是代码要公开。</p>
+<p>Github 由 Chris Wanstrath, PJ Hyett 与 Tom Preston-Werner 三位开发者在 2008 年 4 月创办。迄今拥有 59 名全职员工，主要提供基于 git 的版本托管服务。</p>
+<p>目前看来，GitHub 这场冒险已经胜出。根据来自维基百科关于 GitHub 的描述，我们可以形象地看出 GitHub 的增长速度：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/github-repos.png"></p>
+<p>今天，GitHub 已是：</p>
+<ul>
+<li>  一个拥有 143 万开发者的社区。其中不乏 Linux 发明者 <a target="_blank" rel="noopener" href="https://github.com/torvalds">Torvalds</a> 这样的顶级黑客，以及 Rails 创始人 <a target="_blank" rel="noopener" href="https://github.com/dhh">DHH</a> 这样的年轻极客。</li>
+<li>  这个星球上最流行的开源托管服务。目前已托管 431 万 git 项目，不仅越来越多知名开源项目迁入 GitHub，比如 Ruby on Rails、jQuery、Ruby、Erlang/OTP；近三年流行的开源库往往在 GitHub 首发，例如：<a target="_blank" rel="noopener" href="https://github.com/twitter/bootstrap">BootStrap</a>、<a target="_blank" rel="noopener" href="https://github.com/joyent/node">Node.js</a>、<a target="_blank" rel="noopener" href="https://github.com/jashkenas/coffee-script">CoffeScript</a> 等。</li>
+<li>  alexa 全球排名 414 的网站。</li>
+</ul>
+<h3 id="注册账户以及创建仓库"><a href="#注册账户以及创建仓库" class="headerlink" title="注册账户以及创建仓库"></a>注册账户以及创建仓库</h3><p>要想使用 github 第一步当然是注册 github 账号了， github 官网地址：<a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a>。 之后就可以创建仓库了（免费用户只能建公共仓库），Create a New Repository，填好名称后 Create，之后会出现一些仓库的配置信息，这也是一个 git 的简单教程。</p>
+<h3 id="Github-安装"><a href="#Github-安装" class="headerlink" title="Github 安装"></a>Github 安装</h3><ul>
+<li>  <a target="_blank" rel="noopener" href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">下载 git OSX 版</a></li>
+<li>  <a target="_blank" rel="noopener" href="http://msysgit.github.io/">下载 git Windows 版</a></li>
+<li>  <a target="_blank" rel="noopener" href="http://book.git-scm.com/2_installing_git.html">下载 git Linux 版</a></li>
+</ul>
+<h3 id="配置-Git"><a href="#配置-Git" class="headerlink" title="配置 Git"></a>配置 Git</h3><p>首先在本地创建<code>ssh key；</code></p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><code class="hljs elixir"><span class="hljs-variable">$ </span>ssh-keygen -t rsa -C <span class="hljs-string">&quot;your_email@youremail.com&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>后面的<code>your_email@youremail.com</code>改为你在 github 上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在<code>~/</code>下生成<code>.ssh</code>文件夹，进去，打开<code>id_rsa.pub</code>，复制里面的<code>key</code>。</p>
+<p>回到 github 上，进入 Account Settings（账户配置），左边选择 SSH Keys，Add SSH Key,title 随便填，粘贴在你电脑上生成的 key。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/github-account.jpg"></p>
+<p>为了验证是否成功，在 git bash 下输入：</p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><code class="hljs elixir"><span class="hljs-variable">$ </span>ssh -T git<span class="hljs-variable">@github</span>.com<br></code></pre></td></tr></table></figure>
+
+<p>如果是第一次的会提示是否 continue，输入 yes 就会看到：You’ve successfully authenticated, but GitHub does not provide shell access 。这就表示已成功连上 github。</p>
+<p>接下来我们要做的就是把本地仓库传到 github 上去，在此之前还需要设置 username 和 email，因为 github 每次 commit 都会记录他们。</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><code class="hljs verilog">$ git <span class="hljs-keyword">config</span> --<span class="hljs-keyword">global</span> user<span class="hljs-variable">.name</span> <span class="hljs-string">&quot;your name&quot;</span><br>$ git <span class="hljs-keyword">config</span> --<span class="hljs-keyword">global</span> user<span class="hljs-variable">.email</span> <span class="hljs-string">&quot;your_email@youremail.com&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>进入要上传的仓库，右键 git bash，添加远程地址：</p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><code class="hljs elixir"><span class="hljs-variable">$ </span>git remote add origin git<span class="hljs-variable">@github</span>.<span class="hljs-symbol">com:</span>yourName/yourRepo.git<br></code></pre></td></tr></table></figure>
+
+<p>后面的 yourName 和 yourRepo 表示你再 github 的用户名和刚才新建的仓库，加完之后进入. git，打开 config，这里会多出一个 remote “origin” 内容，这就是刚才添加的远程地址，也可以直接修改 config 来配置远程地址。</p>
+<p>创建新文件夹，打开，然后执行 <code>git init</code> 以创建新的 git 仓库。</p>
+<h3 id="检出仓库"><a href="#检出仓库" class="headerlink" title="检出仓库"></a>检出仓库</h3><p>执行如下命令以创建一个本地仓库的克隆版本：</p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><code class="hljs crmsh">git <span class="hljs-keyword">clone</span> <span class="hljs-title">/path</span>/to/repository<br></code></pre></td></tr></table></figure>
+
+<p>如果是远端服务器上的仓库，你的命令会是这个样子：</p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><code class="hljs elixir">git clone username<span class="hljs-variable">@host</span><span class="hljs-symbol">:/path/to/repository</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h3><p>你的本地仓库由 git 维护的三棵 “树” 组成。第一个是你的 <code>工作目录</code>，它持有实际文件；第二个是 <code>暂存区（Index）</code>，它像个缓存区域，临时保存你的改动；最后是 <code>HEAD</code>，它指向你最后一次提交的结果。</p>
+<p>你可以提出更改（把它们添加到暂存区），使用如下命令：<br><code>git add &lt;filename&gt;</code><br><code>git add *</code><br>这是 git 基本工作流程的第一步；使用如下命令以实际提交改动：<br><code>git commit -m &quot;代码提交信息&quot;</code><br>现在，你的改动已经提交到了 <strong>HEAD</strong>，但是还没到你的远端仓库。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/trees.png"></p>
+<h3 id="推送改动"><a href="#推送改动" class="headerlink" title="推送改动"></a>推送改动</h3><p>你的改动现在已经在本地仓库的 <strong>HEAD</strong> 中了。执行如下命令以将这些改动提交到远端仓库：<br><code>git push origin master</code><br>可以把 <em>master</em> 换成你想要推送的任何分支。</p>
+<p>如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：<br><code>git remote add origin &lt;server&gt;</code><br>如此你就能够将你的改动推送到所添加的服务器上去了。</p>
+<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><p>分支是用来将特性开发绝缘开来的。在你创建仓库的时候，<em>master</em> 是 “默认的” 分支。在其他分支上进行开发，完成后再将它们合并到主分支上。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/branches.png"></p>
+<p>创建一个叫做 “feature_x” 的分支，并切换过去：<br><code>git checkout -b feature_x</code><br>切换回主分支：<br><code>git checkout master</code><br>再把新建的分支删掉：<br><code>git branch -d feature_x</code><br>除非你将分支推送到远端仓库，不然该分支就是 _不为他人所见的_：<br><code>git push origin &lt;branch&gt;</code></p>
+<h3 id="更新与合并"><a href="#更新与合并" class="headerlink" title="更新与合并"></a>更新与合并</h3><p>要更新你的本地仓库至最新改动，执行：<br><code>git pull</code><br>以在你的工作目录中 <em>获取（fetch）</em> 并 <em>合并（merge）</em> 远端的改动。<br>要合并其他分支到你的当前分支（例如 master），执行：<br><code>git merge &lt;branch&gt;</code><br>在这两种情况下，git 都会尝试去自动合并改动。遗憾的是，这可能并非每次都成功，并可能出现_冲突（conflicts）_。 这时候就需要你修改这些文件来手动合并这些_冲突（conflicts）_。改完之后，你需要执行如下命令以将它们标记为合并成功：<br><code>git add &lt;filename&gt;</code><br>在合并改动之前，你可以使用如下命令预览差异：<br><code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code></p>
+<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p>为软件发布创建标签是推荐的。这个概念早已存在，在 SVN 中也有。你可以执行如下命令创建一个叫做 <em>1.0.0</em> 的标签：<br><code>git tag 1.0.0 1b2e1d63ff</code><br><em>1b2e1d63ff</em> 是你想要标记的提交 ID 的前 10 位字符。可以使用下列命令获取提交 ID：<br><code>git log</code><br>你也可以使用少一点的提交 ID 前几位，只要它的指向具有唯一性。</p>
+<h3 id="替换本地改动"><a href="#替换本地改动" class="headerlink" title="替换本地改动"></a>替换本地改动</h3><p>假如你操作失误（当然，这最好永远不要发生），你可以使用如下命令替换掉本地改动：<br><code>git checkout -- &lt;filename&gt;</code><br>此命令会使用 HEAD 中的最新内容替换掉你的工作目录中的文件。已添加到暂存区的改动以及新文件都不会受到影响。</p>
+<p>假如你想丢弃你在本地的所有改动与提交，可以到服务器上获取最新的版本历史，并将你本地主分支指向它：<br><code>git fetch origin</code><br><code>git reset --hard origin/master</code></p>
+<h3 id="实用小贴士"><a href="#实用小贴士" class="headerlink" title="实用小贴士"></a>实用小贴士</h3><p>内建的图形化 git：<br><code>gitk</code><br>彩色的 git 输出：<br><code>git config color.ui true</code><br>显示历史记录时，每个提交的信息只显示一行：<br><code>git config format.pretty oneline</code><br>交互式添加文件到暂存区：<br><code>git add -i</code></p>
+<h3 id="链接与资源"><a href="#链接与资源" class="headerlink" title="链接与资源"></a>链接与资源</h3><h4 id="图形化客户端"><a href="#图形化客户端" class="headerlink" title="图形化客户端"></a>图形化客户端</h4><ul>
+<li>  <a target="_blank" rel="noopener" href="http://gitx.laullon.com/">GitX (L) (OSX, 开源软件)</a></li>
+<li>  <a target="_blank" rel="noopener" href="http://www.git-tower.com/">Tower (OSX)</a></li>
+<li>  <a target="_blank" rel="noopener" href="http://www.sourcetreeapp.com/">Source Tree (OSX, 免费)</a></li>
+<li>  <a target="_blank" rel="noopener" href="http://mac.github.com/">GitHub for Mac (OSX, 免费)</a></li>
+<li>  <a target="_blank" rel="noopener" href="https://itunes.apple.com/gb/app/gitbox/id403388357?mt=12">GitBox (OSX, App Store)</a></li>
+</ul>
+<h4 id="指南和手册"><a href="#指南和手册" class="headerlink" title="指南和手册"></a>指南和手册</h4><ul>
+<li>  <a target="_blank" rel="noopener" href="http://book.git-scm.com/">Git 社区参考书</a></li>
+<li>  <a target="_blank" rel="noopener" href="http://progit.org/book/">专业 Git</a></li>
+<li>  <a target="_blank" rel="noopener" href="http://think-like-a-git.net/">像 git 那样思考</a></li>
+<li>  <a target="_blank" rel="noopener" href="http://help.github.com/">GitHub 帮助</a></li>
+<li>  <a target="_blank" rel="noopener" href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">图解 Git</a></li>
+</ul>
+<h4 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h4><ul>
+<li>  Github 简明指南：<a target="_blank" rel="noopener" href="http://rogerdudler.github.io/git-guide/index.zh.html">http://rogerdudler.github.io/git-guide/index.zh.html</a></li>
+<li>  如何高效利用 GitHub:<a target="_blank" rel="noopener" href="http://www.yangzhiping.com/tech/github.html">http://www.yangzhiping.com/tech/github.html</a></li>
+</ul>
+
+    </div>
+</div>
+<style>
+    #noneimg img {
+        display: none;
+        z-index: 109;
+        width: 600px !important;
+        border-radius: 0px;
+        position: fixed;
+        box-shadow: 0 0 0px #c3c3c300 !important;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto !important;
+    }
+
+    @media screen and (max-width:600px) {
+        #noneimg img {
+            width: 88%
+        }
+    }
+</style>
+<script>
+    $(function () { $('#article').click(function (e) { if (e.target.tagName == "IMG") { if ($('#nonediv').length == 0) { let MImg = `<div id='noneimg'><img src='${e.target.currentSrc}'></div>`; let MDiv = "<div id='nonediv' style='cursor: pointer;display: none; position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #333;opacity:0.5;z-index: 108;'></div>"; $('#article').append(MDiv); $('#article').append(MImg); $("#nonediv").fadeIn("slow"); $("#noneimg img").fadeIn("slow") } } else { if ($('#nonediv').length !== 0) { $("#noneimg ").fadeOut("slow"); $("#nonediv").fadeOut("slow"); setTimeout(function () { $('#nonediv').remove(); $('#noneimg').remove() }, 500) } } }); $('.article-content').addClass('content-move') });
+</script>
+<div class="Last-Next">
+    
+    <a href="/post/d2f57d73.html">
+        <div class="last">
+            <span>上一篇</span>
+            <p>【study note】9.python类</p>
+        </div>
+    </a>
+    
+
+    
+    <a href="/post/96be88e3.html">
+        <div class="next">
+            <span>下一篇</span>
+            <p>markdown</p>
+        </div>
+    </a>
+    
+</div>
+		
+<link rel="stylesheet" href="/css/food.css">
+
+<div class="footer">
+	<div class="Copyright">
+		©2021 By wkless. 主题：<a
+			style="text-decoration: none;display: contents; color: #898F9F;"
+			target="_blank" rel="noopener" href="https://github.com/qiaobug/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a target="_blank" rel="noopener" href="https://github.com/wklesss">
+			<img src="https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210520185915.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: block;
+            border-radius: 50%;
+            width: 66px;
+            height: 66px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            transition: border .5s;
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 30px;
+            height: 30px;
+            margin-top: 17.5px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $('#js-go_top').gotoTop({ offset: 500, speed: 300, animationShow: { 'transform': 'translate(0,0)', 'transition': 'transform .5s ease-in-out' }, animationHide: { 'transform': 'translate(100px,0)', 'transition': 'transform .5s ease-in-out' } });
+</script>
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/QiaoBug/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	</body>
+
+</html>

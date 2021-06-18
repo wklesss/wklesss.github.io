@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		
+<title>【study note】9.python类-Blog</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
+
+
+<meta name="keywords" content="python,">
+<meta name="description" content="">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+
+<!-- Baidu Analytics -->
+<script defer>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c1d0c59064c43461069adb99003eabbe";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+	<meta name="generator" content="Hexo 5.4.0"></head>
+
+	<body>
+		
+<link rel="stylesheet" href="/css/page.css">
+
+
+<link rel="stylesheet" href="/css/page_cente.css">
+
+
+<link rel="stylesheet" href="/css/atom-one-dark.css">
+
+
+<link rel="stylesheet" href="/css/header.css">
+
+	<div class="header">
+		<div class="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/image/logo.png" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										主页
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										归档
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										分类
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										标签
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/links">
+										链接
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										关于
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>wkless</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">主页</a>
+        </li>
+        
+        <li>
+            <a href="/archives">归档</a>
+        </li>
+        
+        <li>
+            <a href="/categories">分类</a>
+        </li>
+        
+        <li>
+            <a href="/tags">标签</a>
+        </li>
+        
+        <li>
+            <a href="/links">链接</a>
+        </li>
+        
+        <li>
+            <a href="/about">关于</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a target="_blank" rel="noopener" href="https://github.com/wklesss">
+            <img src="https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210520185915.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'
+    style='cursor: pointer;display: none; position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #333;opacity:0.5;z-index: 108;'>
+</div>
+<style>
+    .sidebar {
+        width: 0;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        z-index: 999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815)
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $(function () { $('.h-right-close>svg').click(function () { $('.sidebar').animate({ width: "66%" }, 500); $('.shelter').fadeIn("slow") }); $('.shelter').click(function (e) { $('.sidebar').animate({ width: "0" }, 500); $('.shelter').fadeOut("slow") }) })
+</script>
+		<script>
+			$(function () { $(window).scroll(function () { if ($(document).scrollTop() > 100) { $(".header-top").removeClass("header-move2"); $('.header-top').addClass('header-move1') } else { $(".header-top").removeClass("header-move1"); $('.header-top').addClass('header-move2') } }) });
+		</script>
+<div class="header-bg bg-content-img">
+    <div class="bg-content">
+        <ul class="tag">
+            
+            
+            <li><a href="/tags/python">python</a></li>
+            
+            
+        </ul>
+        <h1>【study note】9.python类</h1>
+        <div class="article-info">
+            <div class="article-author">
+                
+                <svg t="1604839279282" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="2901" width="20" height="20">
+                    <path
+                        d="M513 956.3c-247.7 0-448-200.3-448-448S265.3 66.2 513 66.2s448 200.3 448 448-200.3 442.1-448 442.1z m0-830.9c-212.2 0-388.8 170.7-388.8 388.8C124.2 726.3 294.9 903 513 903c212.2 0 388.8-170.7 388.8-388.8S725.2 125.4 513 125.4z m0 430.2c-94.2 0-170.7-76.5-170.7-170.7S418.8 207.8 513 207.8s170.7 76.5 170.7 170.7S607.2 555.6 513 555.6z m0-289.1c-64.6 0-112 52.8-112 112s47.4 117.9 112 117.9 112-52.8 112-112-47.4-117.9-112-117.9z m0 689.8c-135.7 0-259-58.7-341.9-158.9l-11.8-17.8 11.8-17.8c76.5-117.9 206.2-188.5 347.8-188.5 135.7 0 265 64.6 341.9 182.6l11.8 17.8-11.8 17.8C778 897.1 648.7 956.3 513 956.3zM230.3 773.2C300.9 849.7 406.9 897 513 897c112 0 218.1-47.4 288.6-129.8-70.5-88.2-170.7-135.6-282.7-135.6s-218.1 53.3-288.6 141.6z"
+                        p-id="2902" fill="#ffffff"></path>
+                </svg>
+                
+                <span> <a href="">wkless</a></span>
+                <p>2021-05-24 19:50:13</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="article-content">
+    <div id="article" class="content">
+        <blockquote>
+<p>本文由 <a target="_blank" rel="noopener" href="http://ksria.com/simpread/">简悦 SimpRead</a> 转码， 原文地址 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html">docs.python.org</a></p>
+</blockquote>
+<blockquote>
+<p>类把数据与功能绑定在一起。创建新类就是创建新的对象 类型，从而创建该类型的新 实例 。类实例具有多种保持自身状态的属性。类实例还支持（由类定义的）修改自身状态的方法。</p>
+</blockquote>
+<p>类把数据与功能绑定在一起。创建新类就是创建新的对象 _类型_，从而创建该类型的新 <em>实例</em> 。类实例具有多种保持自身状态的属性。类实例还支持（由类定义的）修改自身状态的方法。</p>
+<p>和其他编程语言相比，Python 用非常少的新语法和语义将类加入到语言中。它是 C++ 和 Modula-3 中类机制的结合体。Python 的类提供了面向对象编程（OOP）的所有标准特性：类继承机制允许多个基类，派生类可以覆盖它基类的任何方法，一个方法可以调用基类中相同名称的的方法。对象可以包含任意数量和类型的数据。和模块一样，类也拥有 Python 天然的动态特性：在运行时创建，创建后可以修改。</p>
+<p>在 C++ 术语中，通常类成员（包括数据成员）是 <em>public</em> (例外见下文 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#tut-private">私有变量</a>)，所有成员函数都是 _virtual_。 与在 Modula-3 中一样，没有用于从对象的方法中引用对象成员的简写：方法函数在声明时，有一个显示的参数代表本对象，该参数由调用隐式提供。 与 Smalltalk 一样，类本身也是对象。 这为导入和重命名提供了语义。 与 C++ 和 Modula-3 不同，内置类型可以用作基类，供用户扩展。 此外，与 C++ 一样，大多数具有特殊语法（算术运算符，下标等）的内置运算符都可以为类实例而重新定义。</p>
+<p>（由于缺乏关于类的公认术语，我会偶尔使用 Smalltalk、C++ 的术语，我还会使用 Modula-3 的术语，因为它的面向对象语义比 C++ 更接近 Python，但估计没几个读者听说过这门语言。）</p>
+<h2 id="9-1-名称和对象-¶"><a href="#9-1-名称和对象-¶" class="headerlink" title="9.1. 名称和对象 ¶"></a>9.1. 名称和对象 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#a-word-about-names-and-objects" title="永久链接至标题">¶</a></h2><p>对象之间相互独立，多个名称（在多个作用域内）可以绑定到同一个对象。 其他语言称之为别名。Python 初学者通常不容易理解这个概念，处理数字、字符串、元组等不可变基本类型时，可以不必理会。 但是，对涉及可变对象，如列表、字典等大多数其他类型的 Python 代码的语义，别名可能会产生意料之外的效果。这样做，通常是为了让程序受益，因为别名在某些方面就像指针。例如，传递对象的代价很小，因为实现只传递一个指针；如果函数修改了作为参数传递的对象，调用者就可以看到更改 — 无需 Pascal 用两个不同参数的传递机制。</p>
+<h2 id="9-2-Python-作用域和命名空间-¶"><a href="#9-2-Python-作用域和命名空间-¶" class="headerlink" title="9.2. Python 作用域和命名空间 ¶"></a>9.2. Python 作用域和命名空间 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#python-scopes-and-namespaces" title="永久链接至标题">¶</a></h2><p>在介绍类之前，我首先要告诉你一些 Python 的作用域规则。类定义对命名空间有一些巧妙的技巧，你需要知道作用域和命名空间如何工作才能完全理解正在发生的事情。顺便说一下，关于这个主题的知识对任何高级 Python 程序员都很有用。</p>
+<p>让我们从一些定义开始。</p>
+<p><em>namespace</em> （命名空间）是一个从名字到对象的映射。 当前大部分命名空间都由 Python 字典实现，但一般情况下基本不会去关注它们（除了要面对性能问题时），而且也有可能在将来更改。 下面是几个命名空间的例子：存放内置函数的集合（包含 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/functions.html#abs" title="abs"><code>abs()</code></a> 这样的函数，和内建的异常等）；模块中的全局名称；函数调用中的局部名称。 从某种意义上说，对象的属性集合也是一种命名空间的形式。 关于命名空间的重要一点是，不同命名空间中的名称之间绝对没有关系；例如，两个不同的模块都可以定义一个 <code>maximize</code> 函数而不会产生混淆 — 模块的用户必须在其前面加上模块名称。</p>
+<p>顺便说明一下，我把任何跟在一个点号之后的名称都称为 <em>属性</em> — 例如，在表达式 <code>z.real</code> 中，<code>real</code> 是对象 <code>z</code> 的一个属性。按严格的说法，对模块中名称的引用属于属性引用：在表达式 <code>modname.funcname</code> 中，<code>modname</code> 是一个模块对象而 <code>funcname</code> 是它的一个属性。在此情况下在模块的属性和模块中定义的全局名称之间正好存在一个直观的映射：它们共享相同的命名空间！ <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#id2">1</a></p>
+<p>属性可以是只读或者可写的。如果为后者，那么对属性的赋值是可行的。模块属性是可写的，你可以写 <code>modname.the_answer = 42</code> 。可写的属性同样可以用 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/simple_stmts.html#del"><code>del</code></a> 语句删除。例如， <code>del modname.the_answer</code> 将会从名为 <code>modname</code> 的对象中移除 <code>the_answer</code> 属性。</p>
+<p>命名空间在不同时刻被创建，拥有不同的生存期。包含内置名称的命名空间是在 Python 解释器启动时创建的，永远不会被删除。模块的全局命名空间在模块定义被读入时创建；通常，模块命名空间也会持续到解释器退出。被解释器的顶层调用执行的语句，从一个脚本文件读取或交互式地读取，被认为是 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/__main__.html#module-__main__" title="__main__: The environment where the top-level script is run."><code>__main__</code></a> 模块调用的一部分，因此它们拥有自己的全局命名空间。（内置名称实际上也存在于一个模块中；这个模块被称作 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/builtins.html#module-builtins" title="builtins: The module that provides the built-in namespace."><code>builtins</code></a> 。）</p>
+<p>一个函数的本地命名空间在这个函数被调用时创建，并在函数返回或抛出一个不在函数内部处理的错误时被删除。（事实上，比起描述到底发生了什么，忘掉它更好。）当然，每次递归调用都会有它自己的本地命名空间。</p>
+<p>一个 <em>作用域</em> 是一个命名空间可直接访问的 Python 程序的文本区域。 这里的 “可直接访问” 意味着对名称的非限定引用会尝试在命名空间中查找名称。</p>
+<p>虽然作用域是静态地确定的，但它们会被动态地使用。 在执行期间的任何时刻，会有 3 或 4 个命名空间可被直接访问的嵌套作用域:</p>
+<ul>
+<li><p>  最先搜索的最内部作用域包含局部名称</p>
+</li>
+<li><p>  从最近的封闭作用域开始搜索的任何封闭函数的作用域包含非局部名称，也包括非全局名称</p>
+</li>
+<li><p>  倒数第二个作用域包含当前模块的全局名称</p>
+</li>
+<li><p>  最外面的作用域（最后搜索）是包含内置名称的命名空间</p>
+</li>
+</ul>
+<p>如果一个名称被声明为全局变量，则所有引用和赋值将直接指向包含该模块的全局名称的中间作用域。 要重新绑定在最内层作用域以外找到的变量，可以使用 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/simple_stmts.html#nonlocal"><code>nonlocal</code></a> 语句声明为非本地变量。 如果没有被声明为非本地变量，这些变量将是只读的（尝试写入这样的变量只会在最内层作用域中创建一个 <em>新的</em> 局部变量，而同名的外部变量保持不变）。</p>
+<p>通常，当前局部作用域将（按字面文本）引用当前函数的局部名称。 在函数以外，局部作用域将引用与全局作用域相一致的命名空间：模块的命名空间。 类定义将在局部命名空间内再放置另一个命名空间。</p>
+<p>重要的是应该意识到作用域是按字面文本来确定的：在一个模块内定义的函数的全局作用域就是该模块的命名空间，无论该函数从什么地方或以什么别名被调用。 另一方面，实际的名称搜索是在运行时动态完成的 — 但是，Python 正在朝着 “编译时静态名称解析” 的方向发展，因此不要过于依赖动态名称解析！ （事实上，局部变量已经是被静态确定了。）</p>
+<p>Python 的一个特殊规定是这样的 – 如果不存在生效的 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/simple_stmts.html#global"><code>global</code></a> 或 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/simple_stmts.html#nonlocal"><code>nonlocal</code></a> 语句 – 则对名称的赋值总是会进入最内层作用域。 赋值不会复制数据 — 它们只是将名称绑定到对象。 删除也是如此：语句 <code>del x</code> 会从局部作用域所引用的命名空间中移除对 <code>x</code> 的绑定。 事实上，所有引入新名称的操作都是使用局部作用域：特别地，<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/simple_stmts.html#import"><code>import</code></a> 语句和函数定义会在局部作用域中绑定模块或函数名称。</p>
+<p><a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/simple_stmts.html#global"><code>global</code></a> 语句可被用来表明特定变量生存于全局作用域并且应当在其中被重新绑定；<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/simple_stmts.html#nonlocal"><code>nonlocal</code></a> 语句表明特定变量生存于外层作用域中并且应当在其中被重新绑定。</p>
+<h3 id="9-2-1-作用域和命名空间示例-¶"><a href="#9-2-1-作用域和命名空间示例-¶" class="headerlink" title="9.2.1. 作用域和命名空间示例 ¶"></a>9.2.1. 作用域和命名空间示例 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#scopes-and-namespaces-example" title="永久链接至标题">¶</a></h3><p>这个例子演示了如何引用不同作用域和名称空间，以及 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/simple_stmts.html#global"><code>global</code></a> 和 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/simple_stmts.html#nonlocal"><code>nonlocal</code></a> 会如何影响变量绑定:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">scope_test</span>():</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">do_local</span>():</span><br>        spam = <span class="hljs-string">&quot;local spam&quot;</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">do_nonlocal</span>():</span><br>        <span class="hljs-keyword">nonlocal</span> spam<br>        spam = <span class="hljs-string">&quot;nonlocal spam&quot;</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">do_global</span>():</span><br>        <span class="hljs-keyword">global</span> spam<br>        spam = <span class="hljs-string">&quot;global spam&quot;</span><br><br>    spam = <span class="hljs-string">&quot;test spam&quot;</span><br>    do_local()<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;After local assignment:&quot;</span>, spam)<br>    do_nonlocal()<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;After nonlocal assignment:&quot;</span>, spam)<br>    do_global()<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;After global assignment:&quot;</span>, spam)<br><br>scope_test()<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;In global scope:&quot;</span>, spam)<br></code></pre></td></tr></table></figure>
+
+<p>示例代码的输出是：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">After local assignment: test spam<br>After <span class="hljs-keyword">nonlocal</span> assignment: <span class="hljs-keyword">nonlocal</span> spam<br>After <span class="hljs-keyword">global</span> assignment: <span class="hljs-keyword">nonlocal</span> spam<br>In <span class="hljs-keyword">global</span> scope: <span class="hljs-keyword">global</span> spam<br></code></pre></td></tr></table></figure>
+
+<p>请注意 <em>局部</em> 赋值（这是默认状态）不会改变 <em>scope_test</em> 对 <em>spam</em> 的绑定。 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/simple_stmts.html#nonlocal"><code>nonlocal</code></a> 赋值会改变 <em>scope_test</em> 对 <em>spam</em> 的绑定，而 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/simple_stmts.html#global"><code>global</code></a> 赋值会改变模块层级的绑定。</p>
+<p>您还可以发现在 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/simple_stmts.html#global"><code>global</code></a> 赋值之前没有 <em>spam</em> 的绑定。</p>
+<h2 id="9-3-初探类-¶"><a href="#9-3-初探类-¶" class="headerlink" title="9.3. 初探类 ¶"></a>9.3. 初探类 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#a-first-look-at-classes" title="永久链接至标题">¶</a></h2><p>类引入了一些新语法，三种新对象类型和一些新语义。</p>
+<h3 id="9-3-1-类定义语法-¶"><a href="#9-3-1-类定义语法-¶" class="headerlink" title="9.3.1. 类定义语法 ¶"></a>9.3.1. 类定义语法 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#class-definition-syntax" title="永久链接至标题">¶</a></h3><p>最简单的类定义看起来像这样:</p>
+<figure class="highlight erlang"><table><tr><td class="code"><pre><code class="hljs erlang">class ClassName:<br>    &lt;statement-<span class="hljs-number">1</span>&gt;<br>    .<br>    .<br>    .<br>    &lt;statement-N&gt;<br></code></pre></td></tr></table></figure>
+
+<p>类定义与函数定义 (<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/compound_stmts.html#def"><code>def</code></a> 语句) 一样必须被执行才会起作用。 （你可以尝试将类定义放在 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/compound_stmts.html#if"><code>if</code></a> 语句的一个分支或是函数的内部。）</p>
+<p>在实践中，类定义内的语句通常都是函数定义，但也允许有其他语句，有时还很有用 — 我们会稍后再回来说明这个问题。 在类内部的函数定义通常具有一种特别形式的参数列表，这是方法调用的约定规范所指明的 — 这个问题也将在稍后再说明。</p>
+<p>当进入类定义时，将创建一个新的命名空间，并将其用作局部作用域 — 因此，所有对局部变量的赋值都是在这个新命名空间之内。 特别的，函数定义会绑定到这里的新函数名称。</p>
+<p>当（从结尾处）正常离开类定义时，将创建一个 _类对象_。 这基本上是一个包围在类定义所创建命名空间内容周围的包装器；我们将在下一节了解有关类对象的更多信息。 原始的（在进入类定义之前起作用的）局部作用域将重新生效，类对象将在这里被绑定到类定义头所给出的类名称 (在这个示例中为 <code>ClassName</code>)。</p>
+<h3 id="9-3-2-类对象-¶"><a href="#9-3-2-类对象-¶" class="headerlink" title="9.3.2. 类对象 ¶"></a>9.3.2. 类对象 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#class-objects" title="永久链接至标题">¶</a></h3><p>类对象支持两种操作：属性引用和实例化。</p>
+<p><em>属性引用</em> 使用 Python 中所有属性引用所使用的标准语法: <code>obj.name</code>。 有效的属性名称是类对象被创建时存在于类命名空间中的所有名称。 因此，如果类定义是这样的:</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-keyword">class</span> <span class="hljs-symbol">MyClass:</span><br><span class="hljs-symbol">    </span>&quot;&quot;&quot;<span class="hljs-symbol">A</span> <span class="hljs-symbol">simple</span> <span class="hljs-symbol">example</span> <span class="hljs-symbol">class</span>&quot;&quot;&quot;<br>    <span class="hljs-symbol">i</span> = <span class="hljs-symbol">12345</span><br><br>    <span class="hljs-symbol">def</span> <span class="hljs-symbol">f</span>(<span class="hljs-symbol">self</span>):<br>        <span class="hljs-symbol">return</span> &#x27;<span class="hljs-symbol">hello</span> <span class="hljs-symbol">world</span>&#x27;<br></code></pre></td></tr></table></figure>
+
+<p>那么 <code>MyClass.i</code> 和 <code>MyClass.f</code> 就是有效的属性引用，将分别返回一个整数和一个函数对象。 类属性也可以被赋值，因此可以通过赋值来更改 <code>MyClass.i</code> 的值。 <code>__doc__</code> 也是一个有效的属性，将返回所属类的文档字符串: <code>&quot;A simple example class&quot;</code>。</p>
+<p>类的 <em>实例化</em> 使用函数表示法。 可以把类对象视为是返回该类的一个新实例的不带参数的函数。 举例来说（假设使用上述的类）:</p>
+<p>创建类的新 <em>实例</em> 并将此对象分配给局部变量 <code>x</code>。</p>
+<p>实例化操作（“调用” 类对象）会创建一个空对象。 许多类喜欢创建带有特定初始状态的自定义实例。 为此类定义可能包含一个名为 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__init__" title="object.__init__"><code>__init__()</code></a> 的特殊方法，就像这样:</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><code class="hljs ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(<span class="hljs-keyword">self</span>)</span></span>:<br>    <span class="hljs-keyword">self</span>.data = []<br></code></pre></td></tr></table></figure>
+
+<p>当一个类定义了 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__init__" title="object.__init__"><code>__init__()</code></a> 方法时，类的实例化操作会自动为新创建的类实例发起调用 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__init__" title="object.__init__"><code>__init__()</code></a>。 因此在这个示例中，可以通过以下语句获得一个经初始化的新实例:</p>
+<p>当然，<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__init__" title="object.__init__"><code>__init__()</code></a> 方法还可以有额外参数以实现更高灵活性。 在这种情况下，提供给类实例化运算符的参数将被传递给 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__init__" title="object.__init__"><code>__init__()</code></a>。 例如，:</p>
+<blockquote>
+</blockquote>
+<figure class="highlight python-repl"><table><tr><td class="code"><pre><code class="hljs python-repl"><span class="hljs-meta">&gt;&gt;&gt;</span> <span class="python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Complex</span>:</span></span><br><span class="hljs-meta">...</span> <span class="python">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self, realpart, imagpart</span>):</span></span><br><span class="hljs-meta">...</span> <span class="python">        self.r = realpart</span><br><span class="hljs-meta">...</span> <span class="python">        self.i = imagpart</span><br><span class="hljs-meta">...</span><br><span class="hljs-meta">&gt;&gt;&gt;</span> <span class="python">x = Complex(<span class="hljs-number">3.0</span>, -<span class="hljs-number">4.5</span>)</span><br><span class="hljs-meta">&gt;&gt;&gt;</span> <span class="python">x.r, x.i</span><br>(3.0, -4.5)<br></code></pre></td></tr></table></figure>
+
+<h3 id="9-3-3-实例对象-¶"><a href="#9-3-3-实例对象-¶" class="headerlink" title="9.3.3. 实例对象 ¶"></a>9.3.3. 实例对象 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#instance-objects" title="永久链接至标题">¶</a></h3><p>现在我们能用实例对象做什么？ 实例对象所能理解的唯一操作是属性引用。 有两种有效的属性名称：数据属性和方法。</p>
+<p><em>数据属性</em> 对应于 Smalltalk 中的 “实例变量”，以及 C++ 中的 “数据成员”。 数据属性不需要声明；像局部变量一样，它们将在第一次被赋值时产生。 例如，如果 <code>x</code> 是上面创建的 <code>MyClass</code> 的实例，则以下代码段将打印数值 <code>16</code>，且不保留任何追踪信息:</p>
+<figure class="highlight llvm"><table><tr><td class="code"><pre><code class="hljs llvm"><span class="hljs-keyword">x</span>.counter <span class="hljs-operator">=</span> <span class="hljs-number">1</span><br>while <span class="hljs-keyword">x</span>.counter &lt; <span class="hljs-number">10</span>:<br>    <span class="hljs-keyword">x</span>.counter <span class="hljs-operator">=</span> <span class="hljs-keyword">x</span>.counter * <span class="hljs-number">2</span><br>print(<span class="hljs-keyword">x</span>.counter)<br>del <span class="hljs-keyword">x</span>.counter<br></code></pre></td></tr></table></figure>
+
+<p>另一类实例属性引用称为 _方法_。 方法是 “从属于” 对象的函数。 （在 Python 中，方法这个术语并不是类实例所特有的：其他对象也可以有方法。 例如，列表对象具有 append, insert, remove, sort 等方法。 然而，在以下讨论中，我们使用方法一词将专指类实例对象的方法，除非另外显式地说明。）</p>
+<p>实例对象的有效方法名称依赖于其所属的类。 根据定义，一个类中所有是函数对象的属性都是定义了其实例的相应方法。 因此在我们的示例中，<code>x.f</code> 是有效的方法引用，因为 <code>MyClass.f</code> 是一个函数，而 <code>x.i</code> 不是方法，因为 <code>MyClass.i</code> 不是函数。 但是 <code>x.f</code> 与 <code>MyClass.f</code> 并不是一回事 — 它是一个 _方法对象_，不是函数对象。</p>
+<h3 id="9-3-4-方法对象-¶"><a href="#9-3-4-方法对象-¶" class="headerlink" title="9.3.4. 方法对象 ¶"></a>9.3.4. 方法对象 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#method-objects" title="永久链接至标题">¶</a></h3><p>通常，方法在绑定后立即被调用:</p>
+<p>在 <code>MyClass</code> 示例中，这将返回字符串 <code>&#39;hello world&#39;</code>。 但是，立即调用一个方法并不是必须的: <code>x.f</code> 是一个方法对象，它可以被保存起来以后再调用。 例如:</p>
+<figure class="highlight isbl"><table><tr><td class="code"><pre><code class="hljs isbl"><span class="hljs-variable">xf</span> = <span class="hljs-variable">x.f</span><br><span class="hljs-variable"><span class="hljs-keyword">while</span></span> <span class="hljs-variable"><span class="hljs-literal">True</span></span>:<br>    <span class="hljs-function"><span class="hljs-title">print</span>(<span class="hljs-title">xf</span>())</span><br></code></pre></td></tr></table></figure>
+
+<p>将持续打印 <code>hello world</code>，直到结束。</p>
+<p>当一个方法被调用时到底发生了什么？ 你可能已经注意到上面调用 <code>x.f()</code> 时并没有带参数，虽然 <code>f()</code> 的函数定义指定了一个参数。 这个参数发生了什么事？ 当不带参数地调用一个需要参数的函数时 Python 肯定会引发异常 — 即使参数实际未被使用…</p>
+<p>实际上，你可能已经猜到了答案：方法的特殊之处就在于实例对象会作为函数的第一个参数被传入。 在我们的示例中，调用 <code>x.f()</code> 其实就相当于 <code>MyClass.f(x)</code>。 总之，调用一个具有 <em>n</em> 个参数的方法就相当于调用再多一个参数的对应函数，这个参数值为方法所属实例对象，位置在其他参数之前。</p>
+<p>如果你仍然无法理解方法的运作原理，那么查看实现细节可能会弄清楚问题。 当一个实例的非数据属性被引用时，将搜索实例所属的类。 如果被引用的属性名称表示一个有效的类属性中的函数对象，会通过打包（指向）查找到的实例对象和函数对象到一个抽象对象的方式来创建方法对象：这个抽象对象就是方法对象。 当附带参数列表调用方法对象时，将基于实例对象和参数列表构建一个新的参数列表，并使用这个新参数列表调用相应的函数对象。</p>
+<h3 id="9-3-5-类和实例变量-¶"><a href="#9-3-5-类和实例变量-¶" class="headerlink" title="9.3.5. 类和实例变量 ¶"></a>9.3.5. 类和实例变量 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#class-and-instance-variables" title="永久链接至标题">¶</a></h3><p>一般来说，实例变量用于每个实例的唯一数据，而类变量用于类的所有实例共享的属性和方法:</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">class</span> Dog:    kind = <span class="hljs-string">&#x27;canine&#x27;</span>         # <span class="hljs-keyword">class</span> variable shared <span class="hljs-keyword">by</span> <span class="hljs-keyword">all</span> instances    def __init__(self, <span class="hljs-type">name</span>):        self.name = <span class="hljs-type">name</span>    # instance variable <span class="hljs-keyword">unique</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">each</span> instance&gt;&gt;&gt; d = Dog(<span class="hljs-string">&#x27;Fido&#x27;</span>)&gt;&gt;&gt; e = Dog(<span class="hljs-string">&#x27;Buddy&#x27;</span>)&gt;&gt;&gt; d.kind                  # shared <span class="hljs-keyword">by</span> <span class="hljs-keyword">all</span> dogs<span class="hljs-string">&#x27;canine&#x27;</span>&gt;&gt;&gt; e.kind                  # shared <span class="hljs-keyword">by</span> <span class="hljs-keyword">all</span> dogs<span class="hljs-string">&#x27;canine&#x27;</span>&gt;&gt;&gt; d.name                  # <span class="hljs-keyword">unique</span> <span class="hljs-keyword">to</span> d<span class="hljs-string">&#x27;Fido&#x27;</span>&gt;&gt;&gt; e.name                  # <span class="hljs-keyword">unique</span> <span class="hljs-keyword">to</span> <span class="hljs-string">e&#x27;Buddy&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>正如 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#tut-object">名称和对象</a> 中已讨论过的，共享数据可能在涉及 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/glossary.html#term-mutable">mutable</a> 对象例如列表和字典的时候导致令人惊讶的结果。 例如以下代码中的 <em>tricks</em> 列表不应该被用作类变量，因为所有的 <em>Dog</em> 实例将只共享一个单独的列表:</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><code class="hljs reasonml"><span class="hljs-keyword">class</span> Dog:    tricks = <span class="hljs-literal">[]</span>             # mistaken use <span class="hljs-keyword">of</span> a <span class="hljs-keyword">class</span> variable    def <span class="hljs-constructor">__init__(<span class="hljs-params">self</span>, <span class="hljs-params">name</span>)</span>:        self.name = name    def add<span class="hljs-constructor">_trick(<span class="hljs-params">self</span>, <span class="hljs-params">trick</span>)</span>:        self.tricks.append(trick)&gt;&gt;&gt; d = <span class="hljs-constructor">Dog(&#x27;Fido&#x27;)</span>&gt;&gt;&gt; e = <span class="hljs-constructor">Dog(&#x27;Buddy&#x27;)</span>&gt;&gt;&gt; d.add<span class="hljs-constructor">_trick(&#x27;<span class="hljs-params">roll</span> <span class="hljs-params">over</span>&#x27;)</span>&gt;&gt;&gt; e.add<span class="hljs-constructor">_trick(&#x27;<span class="hljs-params">play</span> <span class="hljs-params">dead</span>&#x27;)</span>&gt;&gt;&gt; d.tricks                # unexpectedly shared by all dogs<span class="hljs-literal">[&#x27;<span class="hljs-identifier">roll</span> <span class="hljs-identifier">over</span>&#x27;, &#x27;<span class="hljs-identifier">play</span> <span class="hljs-identifier">dead</span>&#x27;]</span><br></code></pre></td></tr></table></figure>
+
+<p>正确的类设计应该使用实例变量:</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><code class="hljs reasonml"><span class="hljs-keyword">class</span> Dog:    def <span class="hljs-constructor">__init__(<span class="hljs-params">self</span>, <span class="hljs-params">name</span>)</span>:        self.name = name        self.tricks = <span class="hljs-literal">[]</span>    # creates a <span class="hljs-keyword">new</span> empty <span class="hljs-built_in">list</span> <span class="hljs-keyword">for</span> each dog    def add<span class="hljs-constructor">_trick(<span class="hljs-params">self</span>, <span class="hljs-params">trick</span>)</span>:        self.tricks.append(trick)&gt;&gt;&gt; d = <span class="hljs-constructor">Dog(&#x27;Fido&#x27;)</span>&gt;&gt;&gt; e = <span class="hljs-constructor">Dog(&#x27;Buddy&#x27;)</span>&gt;&gt;&gt; d.add<span class="hljs-constructor">_trick(&#x27;<span class="hljs-params">roll</span> <span class="hljs-params">over</span>&#x27;)</span>&gt;&gt;&gt; e.add<span class="hljs-constructor">_trick(&#x27;<span class="hljs-params">play</span> <span class="hljs-params">dead</span>&#x27;)</span>&gt;&gt;&gt; d.tricks<span class="hljs-literal">[&#x27;<span class="hljs-identifier">roll</span> <span class="hljs-identifier">over</span>&#x27;]</span>&gt;&gt;&gt; e.tricks<span class="hljs-literal">[&#x27;<span class="hljs-identifier">play</span> <span class="hljs-identifier">dead</span>&#x27;]</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="9-4-补充说明-¶"><a href="#9-4-补充说明-¶" class="headerlink" title="9.4. 补充说明 ¶"></a>9.4. 补充说明 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#random-remarks" title="永久链接至标题">¶</a></h2><p>如果同样的属性名称同时出现在实例和类中，则属性查找会优先选择实例:</p>
+<blockquote>
+</blockquote>
+<figure class="highlight python-repl"><table><tr><td class="code"><pre><code class="hljs python-repl"><span class="hljs-meta">&gt;&gt;&gt;</span> <span class="python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Warehouse</span>:</span>        purpose = <span class="hljs-string">&#x27;storage&#x27;</span>        region = <span class="hljs-string">&#x27;west&#x27;</span>&gt;&gt;&gt; w1 = Warehouse()&gt;&gt;&gt; <span class="hljs-built_in">print</span>(w1.purpose, w1.region)storage west&gt;&gt;&gt; w2 = Warehouse()&gt;&gt;&gt; w2.region = <span class="hljs-string">&#x27;east&#x27;</span>&gt;&gt;&gt; <span class="hljs-built_in">print</span>(w2.purpose, w2.region)storage east</span><br></code></pre></td></tr></table></figure>
+
+<p>数据属性可以被方法以及一个对象的普通用户（“客户端”）所引用。 换句话说，类不能用于实现纯抽象数据类型。 实际上，在 Python 中没有任何东西能强制隐藏数据 — 它是完全基于约定的。 （而在另一方面，用 C 语言编写的 Python 实现则可以完全隐藏实现细节，并在必要时控制对象的访问；此特性可以通过用 C 编写 Python 扩展来使用。）</p>
+<p>客户端应当谨慎地使用数据属性 — 客户端可能通过直接操作数据属性的方式破坏由方法所维护的固定变量。 请注意客户端可以向一个实例对象添加他们自己的数据属性而不会影响方法的可用性，只要保证避免名称冲突 — 再次提醒，在此使用命名约定可以省去许多令人头痛的麻烦。</p>
+<p>在方法内部引用数据属性（或其他方法！）并没有简便方式。 我发现这实际上提升了方法的可读性：当浏览一个方法代码时，不会存在混淆局部变量和实例变量的机会。</p>
+<p>方法的第一个参数常常被命名为 <code>self</code>。 这也不过就是一个约定: <code>self</code> 这一名称在 Python 中绝对没有特殊含义。 但是要注意，不遵循此约定会使得你的代码对其他 Python 程序员来说缺乏可读性，而且也可以想像一个 <em>类浏览器</em> 程序的编写可能会依赖于这样的约定。</p>
+<p>任何一个作为类属性的函数都为该类的实例定义了一个相应方法。 函数定义的文本并非必须包含于类定义之内：将一个函数对象赋值给一个局部变量也是可以的。 例如:</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"># Function defined outside the classdef f1(self, x, y):    <span class="hljs-keyword">return</span> min(x, x+y)<span class="hljs-keyword">class</span> <span class="hljs-symbol">C:    <span class="hljs-symbol">f</span></span> = <span class="hljs-symbol">f1</span>    <span class="hljs-symbol">def</span> <span class="hljs-symbol">g</span>(<span class="hljs-symbol">self</span>):        <span class="hljs-symbol">return</span> &#x27;<span class="hljs-symbol">hello</span> <span class="hljs-symbol">world</span>&#x27;    <span class="hljs-symbol">h</span> = <span class="hljs-symbol">g</span><br></code></pre></td></tr></table></figure>
+
+<p>现在 <code>f</code>, <code>g</code> 和 <code>h</code> 都是 <code>C</code> 类的引用函数对象的属性，因而它们就都是 <code>C</code> 的实例的方法 — 其中 <code>h</code> 完全等同于 <code>g</code>。 但请注意，本示例的做法通常只会令程序的阅读者感到迷惑。</p>
+<p>方法可以通过使用 <code>self</code> 参数的方法属性调用其他方法:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bag</span>:</span>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self</span>):</span>        self.data = []    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add</span>(<span class="hljs-params">self, x</span>):</span>        self.data.append(x)    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">addtwice</span>(<span class="hljs-params">self, x</span>):</span>        self.add(x)        self.add(x)<br></code></pre></td></tr></table></figure>
+
+<p>方法可以通过与普通函数相同的方式引用全局名称。 与方法相关联的全局作用域就是包含其定义的模块。 （类永远不会被作为全局作用域。） 虽然我们很少会有充分的理由在方法中使用全局作用域，但全局作用域存在许多合理的使用场景：举个例子，导入到全局作用域的函数和模块可以被方法所使用，在其中定义的函数和类也一样。 通常，包含该方法的类本身是在全局作用域中定义的，而在下一节中我们将会发现为何方法需要引用其所属类的很好的理由。</p>
+<p>每个值都是一个对象，因此具有 <em>类</em> （也称为 _类型_），并存储为 <code>object.__class__</code> 。</p>
+<h2 id="9-5-继承-¶"><a href="#9-5-继承-¶" class="headerlink" title="9.5. 继承 ¶"></a>9.5. 继承 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#inheritance" title="永久链接至标题">¶</a></h2><p>当然，如果不支持继承，语言特性就不值得称为 “类”。派生类定义的语法如下所示:</p>
+<figure class="highlight crystal"><table><tr><td class="code"><pre><code class="hljs crystal"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DerivedClassName</span>(<span class="hljs-title">BaseClassName</span>):    &lt;<span class="hljs-title">statement</span>-1&gt;    .    .    .    &lt;<span class="hljs-title">statement</span>-<span class="hljs-title">N</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>名称 <code>BaseClassName</code> 必须定义于包含派生类定义的作用域中。 也允许用其他任意表达式代替基类名称所在的位置。 这有时也可能会用得上，例如，当基类定义在另一个模块中的时候:</p>
+<figure class="highlight haskell"><table><tr><td class="code"><pre><code class="hljs haskell"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-type">DerivedClassName</span>(<span class="hljs-title">modname</span>.<span class="hljs-type">BaseClassName</span>):</span><br></code></pre></td></tr></table></figure>
+
+<p>派生类定义的执行过程与基类相同。 当构造类对象时，基类会被记住。 此信息将被用来解析属性引用：如果请求的属性在类中找不到，搜索将转往基类中进行查找。 如果基类本身也派生自其他某个类，则此规则将被递归地应用。</p>
+<p>派生类的实例化没有任何特殊之处: <code>DerivedClassName()</code> 会创建该类的一个新实例。 方法引用将按以下方式解析：搜索相应的类属性，如有必要将按基类继承链逐步向下查找，如果产生了一个函数对象则方法引用就生效。</p>
+<p>派生类可能会重写其基类的方法。 因为方法在调用同一对象的其他方法时没有特殊权限，所以调用同一基类中定义的另一方法的基类方法最终可能会调用覆盖它的派生类的方法。 （对 C++ 程序员的提示：Python 中所有的方法实际上都是 <code>virtual</code> 方法。）</p>
+<p>在派生类中的重载方法实际上可能想要扩展而非简单地替换同名的基类方法。 有一种方式可以简单地直接调用基类方法：即调用 <code>BaseClassName.methodname(self, arguments)</code>。 有时这对客户端来说也是有用的。 （请注意仅当此基类可在全局作用域中以 <code>BaseClassName</code> 的名称被访问时方可使用此方式。）</p>
+<p>Python 有两个内置函数可被用于继承机制：</p>
+<ul>
+<li><p>  使用 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/functions.html#isinstance" title="isinstance"><code>isinstance()</code></a> 来检查一个实例的类型: <code>isinstance(obj, int)</code> 仅会在 <code>obj.__class__</code> 为 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/functions.html#int" title="int"><code>int</code></a> 或某个派生自 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/functions.html#int" title="int"><code>int</code></a> 的类时为 <code>True</code>。</p>
+</li>
+<li><p>  使用 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/functions.html#issubclass" title="issubclass"><code>issubclass()</code></a> 来检查类的继承关系: <code>issubclass(bool, int)</code> 为 <code>True</code>，因为 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/functions.html#bool" title="bool"><code>bool</code></a> 是 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/functions.html#int" title="int"><code>int</code></a> 的子类。 但是，<code>issubclass(float, int)</code> 为 <code>False</code>，因为 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/functions.html#float" title="float"><code>float</code></a> 不是 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/functions.html#int" title="int"><code>int</code></a> 的子类。</p>
+</li>
+</ul>
+<h3 id="9-5-1-多重继承-¶"><a href="#9-5-1-多重继承-¶" class="headerlink" title="9.5.1. 多重继承 ¶"></a>9.5.1. 多重继承 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#multiple-inheritance" title="永久链接至标题">¶</a></h3><p>Python 也支持一种多重继承。 带有多个基类的类定义语句如下所示:</p>
+<figure class="highlight haskell"><table><tr><td class="code"><pre><code class="hljs haskell"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-type">DerivedClassName</span>(<span class="hljs-type">Base1</span>, <span class="hljs-type">Base2</span>, <span class="hljs-type">Base3</span>):    &lt;statement-1&gt;    .    .    .    &lt;statement-<span class="hljs-type">N</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>对于多数应用来说，在最简单的情况下，你可以认为搜索从父类所继承属性的操作是深度优先、从左至右的，当层次结构中存在重叠时不会在同一个类中搜索两次。 因此，如果某一属性在 <code>DerivedClassName</code> 中未找到，则会到 <code>Base1</code> 中搜索它，然后（递归地）到 <code>Base1</code> 的基类中搜索，如果在那里未找到，再到 <code>Base2</code> 中搜索，依此类推。</p>
+<p>真实情况比这个更复杂一些；方法解析顺序会动态改变以支持对 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/functions.html#super" title="super"><code>super()</code></a> 的协同调用。 这种方式在某些其他多重继承型语言中被称为后续方法调用，它比单继承型语言中的 super 调用更强大。</p>
+<p>动态改变顺序是有必要的，因为所有多重继承的情况都会显示出一个或更多的菱形关联（即至少有一个父类可通过多条路径被最底层类所访问）。 例如，所有类都是继承自 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/functions.html#object" title="object"><code>object</code></a>，因此任何多重继承的情况都提供了一条以上的路径可以通向 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/functions.html#object" title="object"><code>object</code></a>。 为了确保基类不会被访问一次以上，动态算法会用一种特殊方式将搜索顺序线性化， 保留每个类所指定的从左至右的顺序，只调用每个父类一次，并且保持单调（即一个类可以被子类化而不影响其父类的优先顺序）。 总而言之，这些特性使得设计具有多重继承的可靠且可扩展的类成为可能。 要了解更多细节，请参阅 <a target="_blank" rel="noopener" href="https://www.python.org/download/releases/2.3/mro/">https://www.python.org/download/releases/2.3/mro/</a>。</p>
+<h2 id="9-6-私有变量-¶"><a href="#9-6-私有变量-¶" class="headerlink" title="9.6. 私有变量 ¶"></a>9.6. 私有变量 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#private-variables" title="永久链接至标题">¶</a></h2><p>那种仅限从一个对象内部访问的 “私有” 实例变量在 Python 中并不存在。 但是，大多数 Python 代码都遵循这样一个约定：带有一个下划线的名称 (例如 <code>_spam</code>) 应该被当作是 API 的非公有部分 (无论它是函数、方法或是数据成员)。 这应当被视为一个实现细节，可能不经通知即加以改变。</p>
+<p>由于存在对于类私有成员的有效使用场景（例如避免名称与子类所定义的名称相冲突），因此存在对此种机制的有限支持，称为 _名称改写_。 任何形式为 <code>__spam</code> 的标识符（至少带有两个前缀下划线，至多一个后缀下划线）的文本将被替换为 <code>_classname__spam</code>，其中 <code>classname</code> 为去除了前缀下划线的当前类名称。 这种改写不考虑标识符的句法位置，只要它出现在类定义内部就会进行。</p>
+<p>名称改写有助于让子类重载方法而不破坏类内方法调用。例如:</p>
+<figure class="highlight n1ql"><table><tr><td class="code"><pre><code class="hljs n1ql">class Mapping:    def __init__(self, iterable):        self.items_list = []        self.__update(iterable)    def <span class="hljs-keyword">update</span>(<span class="hljs-keyword">self</span>, iterable):        <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> iterable:            <span class="hljs-keyword">self</span>.items_list.append(item)    __update = <span class="hljs-keyword">update</span>   # <span class="hljs-keyword">private</span> copy of original <span class="hljs-keyword">update</span>() methodclass MappingSubclass(<span class="hljs-keyword">Mapping</span>):    def <span class="hljs-keyword">update</span>(<span class="hljs-keyword">self</span>, <span class="hljs-keyword">keys</span>, <span class="hljs-keyword">values</span>):        # provides new signature <span class="hljs-keyword">for</span> <span class="hljs-keyword">update</span>()        # but does <span class="hljs-keyword">not</span> <span class="hljs-keyword">break</span> __init__()        <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> zip(<span class="hljs-keyword">keys</span>, <span class="hljs-keyword">values</span>):            <span class="hljs-keyword">self</span>.items_list.append(item)<br></code></pre></td></tr></table></figure>
+
+<p>上面的示例即使在 <code>MappingSubclass</code> 引入了一个 <code>__update</code> 标识符的情况下也不会出错，因为它会在 <code>Mapping</code> 类中被替换为 <code>_Mapping__update</code> 而在 <code>MappingSubclass</code> 类中被替换为 <code>_MappingSubclass__update</code>。</p>
+<p>请注意，改写规则的设计主要是为了避免意外冲突；访问或修改被视为私有的变量仍然是可能的。这在特殊情况下甚至会很有用，例如在调试器中。</p>
+<p>请注意传递给 <code>exec()</code> 或 <code>eval()</code> 的代码不会将发起调用类的类名视作当前类；这类似于 <code>global</code> 语句的效果，因此这种效果仅限于同时经过字节码编译的代码。 同样的限制也适用于 <code>getattr()</code>, <code>setattr()</code> 和 <code>delattr()</code>，以及对于 <code>__dict__</code> 的直接引用。</p>
+<h2 id="9-7-杂项说明-¶"><a href="#9-7-杂项说明-¶" class="headerlink" title="9.7. 杂项说明 ¶"></a>9.7. 杂项说明 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#odds-and-ends" title="永久链接至标题">¶</a></h2><p>有时会需要使用类似于 Pascal 的 “record” 或 C 的 “struct” 这样的数据类型，将一些命名数据项捆绑在一起。 这种情况适合定义一个空类:</p>
+<figure class="highlight oxygene"><table><tr><td class="code"><pre><code class="hljs oxygene"><span class="hljs-keyword">class</span> Employee:    passjohn = Employee()  # <span class="hljs-keyword">Create</span> an <span class="hljs-keyword">empty</span> employee <span class="hljs-keyword">record</span># Fill the fields <span class="hljs-keyword">of</span> the recordjohn.name = <span class="hljs-string">&#x27;John Doe&#x27;</span>john.dept = <span class="hljs-string">&#x27;computer lab&#x27;</span>john.salary = <span class="hljs-number">1000</span><br></code></pre></td></tr></table></figure>
+
+<p>一段需要特定抽象数据类型的 Python 代码往往可以被传入一个模拟了该数据类型的方法的类作为替代。 例如，如果你有一个基于文件对象来格式化某些数据的函数，你可以定义一个带有 <code>read()</code> 和 <code>readline()</code> 方法从字符串缓存获取数据的类，并将其作为参数传入。</p>
+<p>实例方法对象也具有属性: <code>m.__self__</code> 就是带有 <code>m()</code> 方法的实例对象，而 <code>m.__func__</code> 则是该方法所对应的函数对象。</p>
+<h2 id="9-8-迭代器-¶"><a href="#9-8-迭代器-¶" class="headerlink" title="9.8. 迭代器 ¶"></a>9.8. 迭代器 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#iterators" title="永久链接至标题">¶</a></h2><p>到目前为止，您可能已经注意到大多数容器对象都可以使用 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/compound_stmts.html#for"><code>for</code></a> 语句:</p>
+<figure class="highlight processing"><table><tr><td class="code"><pre><code class="hljs processing"><span class="hljs-keyword">for</span> element in [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]:    <span class="hljs-built_in">print</span>(element)<span class="hljs-keyword">for</span> element in (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>):    <span class="hljs-built_in">print</span>(element)<span class="hljs-keyword">for</span> <span class="hljs-built_in">key</span> in &#123;<span class="hljs-string">&#x27;one&#x27;</span>:<span class="hljs-number">1</span>, <span class="hljs-string">&#x27;two&#x27;</span>:<span class="hljs-number">2</span>&#125;:    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">key</span>)<span class="hljs-keyword">for</span> <span class="hljs-built_in">char</span> in <span class="hljs-string">&quot;123&quot;</span>:    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">char</span>)<span class="hljs-keyword">for</span> <span class="hljs-built_in">line</span> in <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;myfile.txt&quot;</span>):    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">line</span>, end=<span class="hljs-string">&#x27;&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>这种访问风格清晰、简洁又方便。 迭代器的使用非常普遍并使得 Python 成为一个统一的整体。 在幕后，<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/compound_stmts.html#for"><code>for</code></a> 语句会在容器对象上调用 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/functions.html#iter" title="iter"><code>iter()</code></a>。 该函数返回一个定义了 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/stdtypes.html#iterator.__next__" title="iterator.__next__"><code>__next__()</code></a> 方法的迭代器对象，此方法将逐一访问容器中的元素。 当元素用尽时，<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/stdtypes.html#iterator.__next__" title="iterator.__next__"><code>__next__()</code></a> 将引发 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/exceptions.html#StopIteration" title="StopIteration"><code>StopIteration</code></a> 异常来通知终止 <code>for</code> 循环。 你可以使用 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/functions.html#next" title="next"><code>next()</code></a> 内置函数来调用 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/stdtypes.html#iterator.__next__" title="iterator.__next__"><code>__next__()</code></a> 方法；这个例子显示了它的运作方式:</p>
+<blockquote>
+</blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="code"><pre><code class="hljs livecodeserver">&gt;&gt;&gt; s = <span class="hljs-string">&#x27;abc&#x27;</span>&gt;&gt;&gt; <span class="hljs-keyword">it</span> = iter(s)&gt;&gt;&gt; <span class="hljs-keyword">it</span>&lt;iterator object <span class="hljs-keyword">at</span> <span class="hljs-number">0x00A1DB50</span>&gt;&gt;&gt;&gt; next(<span class="hljs-keyword">it</span>)<span class="hljs-string">&#x27;a&#x27;</span>&gt;&gt;&gt; next(<span class="hljs-keyword">it</span>)<span class="hljs-string">&#x27;b&#x27;</span>&gt;&gt;&gt; next(<span class="hljs-keyword">it</span>)<span class="hljs-string">&#x27;c&#x27;</span>&gt;&gt;&gt; next(<span class="hljs-keyword">it</span>)Traceback (most recent call <span class="hljs-keyword">last</span>):  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, <span class="hljs-built_in">line</span> <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;    next(<span class="hljs-keyword">it</span>)StopIteration<br></code></pre></td></tr></table></figure>
+
+<p>看过迭代器协议的幕后机制，给你的类添加迭代器行为就很容易了。 定义一个 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__iter__" title="object.__iter__"><code>__iter__()</code></a> 方法来返回一个带有 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/stdtypes.html#iterator.__next__" title="iterator.__next__"><code>__next__()</code></a> 方法的对象。 如果类已定义了 <code>__next__()</code>，则 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__iter__" title="object.__iter__"><code>__iter__()</code></a> 可以简单地返回 <code>self</code>:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Reverse</span>:</span>    <span class="hljs-string">&quot;&quot;&quot;Iterator for looping over a sequence backwards.&quot;&quot;&quot;</span>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self, data</span>):</span>        self.data = data        self.index = <span class="hljs-built_in">len</span>(data)    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__iter__</span>(<span class="hljs-params">self</span>):</span>        <span class="hljs-keyword">return</span> self    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__next__</span>(<span class="hljs-params">self</span>):</span>        <span class="hljs-keyword">if</span> self.index == <span class="hljs-number">0</span>:            <span class="hljs-keyword">raise</span> StopIteration        self.index = self.index - <span class="hljs-number">1</span>        <span class="hljs-keyword">return</span> self.data[self.index]<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+</blockquote>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><code class="hljs gradle">&gt;&gt;&gt; rev = <span class="hljs-keyword">Reverse</span>(<span class="hljs-string">&#x27;spam&#x27;</span>)&gt;&gt;&gt; iter(rev)&lt;__main__.<span class="hljs-keyword">Reverse</span> object at <span class="hljs-number">0</span>x00A1DB50&gt;&gt;&gt;&gt; <span class="hljs-keyword">for</span> <span class="hljs-keyword">char</span> in rev:...     <span class="hljs-keyword">print</span>(<span class="hljs-keyword">char</span>)...maps<br></code></pre></td></tr></table></figure>
+
+<h2 id="9-9-生成器-¶"><a href="#9-9-生成器-¶" class="headerlink" title="9.9. 生成器 ¶"></a>9.9. 生成器 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#generators" title="永久链接至标题">¶</a></h2><p><a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/glossary.html#term-generator">生成器</a> 是一个用于创建迭代器的简单而强大的工具。 它们的写法类似于标准的函数，但当它们要返回数据时会使用 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/simple_stmts.html#yield"><code>yield</code></a> 语句。 每次在生成器上调用 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/functions.html#next" title="next"><code>next()</code></a> 时，它会从上次离开的位置恢复执行（它会记住上次执行语句时的所有数据值）。 一个显示如何非常容易地创建生成器的示例如下:</p>
+<figure class="highlight fortran"><table><tr><td class="code"><pre><code class="hljs fortran">def reverse(<span class="hljs-keyword">data</span>):    for <span class="hljs-built_in">index</span> <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(len(<span class="hljs-keyword">data</span>)-<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>):        yield <span class="hljs-keyword">data</span>[<span class="hljs-built_in">index</span>]<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+</blockquote>
+<figure class="highlight axapta"><table><tr><td class="code"><pre><code class="hljs axapta">&gt;&gt;&gt; <span class="hljs-keyword">for</span> <span class="hljs-built_in">char</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">reverse</span>(<span class="hljs-string">&#x27;golf&#x27;</span>):...     <span class="hljs-keyword">print</span>(<span class="hljs-built_in">char</span>)...flog<br></code></pre></td></tr></table></figure>
+
+<p>可以用生成器来完成的操作同样可以用前一节所描述的基于类的迭代器来完成。 但生成器的写法更为紧凑，因为它会自动创建 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__iter__" title="object.__iter__"><code>__iter__()</code></a> 和 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/expressions.html#generator.__next__" title="generator.__next__"><code>__next__()</code></a> 方法。</p>
+<p>另一个关键特性在于局部变量和执行状态会在每次调用之间自动保存。 这使得该函数相比使用 <code>self.index</code> 和 <code>self.data</code> 这种实例变量的方式更易编写且更为清晰。</p>
+<p>除了会自动创建方法和保存程序状态，当生成器终结时，它们还会自动引发 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/exceptions.html#StopIteration" title="StopIteration"><code>StopIteration</code></a>。 这些特性结合在一起，使得创建迭代器能与编写常规函数一样容易。</p>
+<h2 id="9-10-生成器表达式-¶"><a href="#9-10-生成器表达式-¶" class="headerlink" title="9.10. 生成器表达式 ¶"></a>9.10. 生成器表达式 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/classes.html#generator-expressions" title="永久链接至标题">¶</a></h2><p>某些简单的生成器可以写成简洁的表达式代码，所用语法类似列表推导式，但外层为圆括号而非方括号。 这种表达式被设计用于生成器将立即被外层函数所使用的情况。 生成器表达式相比完整的生成器更紧凑但较不灵活，相比等效的列表推导式则更为节省内存。</p>
+<p>例如:</p>
+<blockquote>
+</blockquote>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><code class="hljs pgsql">&gt;&gt;&gt; sum(i*i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>))                 # sum <span class="hljs-keyword">of</span> squares&gt;&gt;&gt; xvec = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>]&gt;&gt;&gt; yvec = [<span class="hljs-number">7</span>, <span class="hljs-number">5</span>, <span class="hljs-number">3</span>]&gt;&gt;&gt; sum(x*y <span class="hljs-keyword">for</span> x,y <span class="hljs-keyword">in</span> zip(xvec, yvec))         # dot product&gt;&gt;&gt; unique_words = <span class="hljs-keyword">set</span>(word <span class="hljs-keyword">for</span> <span class="hljs-type">line</span> <span class="hljs-keyword">in</span> page  <span class="hljs-keyword">for</span> word <span class="hljs-keyword">in</span> <span class="hljs-type">line</span>.split())&gt;&gt;&gt; valedictorian = max((student.gpa, student.name) <span class="hljs-keyword">for</span> student <span class="hljs-keyword">in</span> graduates)&gt;&gt;&gt; data = <span class="hljs-string">&#x27;golf&#x27;</span>&gt;&gt;&gt; list(data[i] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(data)<span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>))[<span class="hljs-string">&#x27;f&#x27;</span>, <span class="hljs-string">&#x27;l&#x27;</span>, <span class="hljs-string">&#x27;o&#x27;</span>, <span class="hljs-string">&#x27;g&#x27;</span>]<br></code></pre></td></tr></table></figure>
+
+<p>脚注</p>
+
+    </div>
+</div>
+<style>
+    #noneimg img {
+        display: none;
+        z-index: 109;
+        width: 600px !important;
+        border-radius: 0px;
+        position: fixed;
+        box-shadow: 0 0 0px #c3c3c300 !important;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto !important;
+    }
+
+    @media screen and (max-width:600px) {
+        #noneimg img {
+            width: 88%
+        }
+    }
+</style>
+<script>
+    $(function () { $('#article').click(function (e) { if (e.target.tagName == "IMG") { if ($('#nonediv').length == 0) { let MImg = `<div id='noneimg'><img src='${e.target.currentSrc}'></div>`; let MDiv = "<div id='nonediv' style='cursor: pointer;display: none; position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #333;opacity:0.5;z-index: 108;'></div>"; $('#article').append(MDiv); $('#article').append(MImg); $("#nonediv").fadeIn("slow"); $("#noneimg img").fadeIn("slow") } } else { if ($('#nonediv').length !== 0) { $("#noneimg ").fadeOut("slow"); $("#nonediv").fadeOut("slow"); setTimeout(function () { $('#nonediv').remove(); $('#noneimg').remove() }, 500) } } }); $('.article-content').addClass('content-move') });
+</script>
+<div class="Last-Next">
+    
+    <a href="/post/20e858c0.html">
+        <div class="last">
+            <span>上一篇</span>
+            <p>【study note】vim</p>
+        </div>
+    </a>
+    
+
+    
+    <a href="/post/48e7fa72.html">
+        <div class="next">
+            <span>下一篇</span>
+            <p>github简明教程</p>
+        </div>
+    </a>
+    
+</div>
+		
+<link rel="stylesheet" href="/css/food.css">
+
+<div class="footer">
+	<div class="Copyright">
+		©2021 By wkless. 主题：<a
+			style="text-decoration: none;display: contents; color: #898F9F;"
+			target="_blank" rel="noopener" href="https://github.com/qiaobug/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a target="_blank" rel="noopener" href="https://github.com/wklesss">
+			<img src="https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210520185915.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: block;
+            border-radius: 50%;
+            width: 66px;
+            height: 66px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            transition: border .5s;
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 30px;
+            height: 30px;
+            margin-top: 17.5px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $('#js-go_top').gotoTop({ offset: 500, speed: 300, animationShow: { 'transform': 'translate(0,0)', 'transition': 'transform .5s ease-in-out' }, animationHide: { 'transform': 'translate(100px,0)', 'transition': 'transform .5s ease-in-out' } });
+</script>
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/QiaoBug/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	</body>
+
+</html>
