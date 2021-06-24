@@ -31,7 +31,7 @@ date: 2021-06-22 07:56:11
 
 [读报金句摘录 - 知乎](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623150817.jpg)
 
-[每日环球视野_百度图片搜索](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623150815.jpg)
+[iDaily 每日环球视野](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623150815.jpg)
 
 [新片情报局](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623150813.jpg)
 
@@ -43,11 +43,13 @@ date: 2021-06-22 07:56:11
 
 [InfoQ](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623160504.png)
 
+[IT之家](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210624142837.png)
+
+[央视新闻](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210624142929.png)
+
 - wox自定义搜索图标[200x200]
 
 [bilibili](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623145653.png)
-
-[csdn (1)](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623145650.png)
 
 [csdn](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623145647.png)
 
@@ -55,7 +57,7 @@ date: 2021-06-22 07:56:11
 
 [taobao](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623145640.png)
 
-[百度 (3)](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623145638.png)
+[百度](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623145638.png)
 
 [豆瓣](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623145635.png)
 
@@ -63,15 +65,13 @@ date: 2021-06-22 07:56:11
 
 [什么值得买](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623145630.png)
 
-[淘宝 (1)](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623145627.png)
-
-[淘宝 (2)](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623145625.png)
+[淘宝 ](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623145625.png)
 
 [网易云](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623145622.png)
 
 [微博](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623145620.png)
 
-[验证-简书](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623145617.png)
+[简书](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623145617.png)
 
 [知乎](https://cdn.jsdelivr.net/gh/wklesss/picture@latest/img/20210623145615.png)
 
