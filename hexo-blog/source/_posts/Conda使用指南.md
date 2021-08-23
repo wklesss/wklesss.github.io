@@ -24,7 +24,7 @@ Python 渐渐成为最流行的编程语言之一，在数据分析、机器学�
 创建环境
 ----
 
-```
+```shell
 # 创建一个名为python34的环境，指定Python版本是3.5（不用管是3.5.x，conda会为我们自动寻找3.５.x中的最新版本）
 conda create --name py35 python=3.5
 
@@ -33,7 +33,7 @@ conda create --name py35 python=3.5
 激活环境
 ----
 
-```
+```shell
 # 安装好后，使用activate激活某个环境
 activate py35 # for Windows
 source activate py35 # for Linux & Mac
@@ -49,7 +49,7 @@ Python 3.5.5 :: Anaconda, Inc.
 返回主环境
 -----
 
-```
+```shell
 # 如果想返回默认的python 2.7环境，运行
 deactivate py35 # for Windows
 source deactivate py35 # for Linux & Mac
@@ -59,7 +59,7 @@ source deactivate py35 # for Linux & Mac
 删除环境
 ----
 
-```
+```shell
 # 删除一个已有的环境
 conda remove --name py35 --all
 
@@ -70,7 +70,7 @@ conda remove --name py35 --all
 
 用户安装的不同 Python 环境会放在`~/anaconda/envs`目录下。查看当前系统中已经安装了哪些环境，使用`conda info -e`。
 
-```
+```shell
 user@user-XPS-8920:~$ conda info -e
 # conda environments:
 #
@@ -89,27 +89,25 @@ tf                       /home/user/anaconda2/envs/tf
 
 为当前环境安装库
 
-```
+```shell
 # numpy
 conda install numpy
 # conda会从从远程搜索numpy的相关信息和依赖项目
-
 ```
 
 查看已经安装的库
 --------
 
-```
+```shell
 # 查看已经安装的packages
 conda list
 # 最新版的conda是从site-packages文件夹中搜索已经安装的包，可以显示出通过各种方式安装的包
-
 ```
 
 查看某个环境的已安装包
 -----------
 
-```
+```shell
 # 查看某个指定环境的已安装包
 conda list -n py35
 
@@ -118,49 +116,57 @@ conda list -n py35
 搜索 package 的信息
 --------------
 
-```
-# 查找package信息conda search numpyLoading channels: done# Name                  Version           Build  Channel             numpy                     1.5.1          py26_1  pkgs/free           ...numpy                    1.15.1  py37hec00662_0  anaconda/pkgs/main  numpy                    1.15.1  py37hec00662_0  pkgs/main
+```shell
+# 查找package信息
+conda search numpy
+Loading channels: done# Name                  Version           Build  Channel             numpy                     1.5.1          py26_1  pkgs/free           ...numpy                    1.15.1  py37hec00662_0  anaconda/pkgs/main  numpy                    1.15.1  py37hec00662_0  pkgs/main
 ```
 
 安装 package 到指定的环境
 -----------------
 
-```
-# 安装packageconda install -n py35 numpy# 如果不用-n指定环境名称，则被安装在当前活跃环境# 也可以通过-c指定通过某个channel安装
+```shell
+# 安装package
+conda install -n py35 numpy
+# 如果不用-n指定环境名称，则被安装在当前活跃环境
+# 也可以通过-c指定通过某个channel安装
 ```
 
 更新 package
 ----------
 
-```
-# 更新packageconda update -n py35 numpy
+```shell
+# 更新package
+conda update -n py35 numpy
 ```
 
 删除 package
 ----------
 
-```
-# 删除packageconda remove -n py35 numpy
+```shell
+# 删除package
+conda remove -n py35 numpy
 ```
 
 更新 conda
 --------
 
-```
-# 更新conda，保持conda最新conda update conda
+```shell
+# 更新conda，保持conda最新
+conda update conda
 ```
 
 更新 anaconda
 -----------
 
-```
+```shell
 # 更新anaconda
 conda update anaconda
 ```
 
 ### 更新Python
 
-```
+```shell
 更新 python
 ---------
 
@@ -178,14 +184,12 @@ Anaconda　
 ---------
 
 镜像 Anaconda 安装包可以到 [https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/) 下载。 TUNA 还提供了 Anaconda 仓库的镜像，运行以下命令：
-
-```
-
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ 
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/ 
 conda config --set show_channel_urls yes
-
 ```
+
+```shell
 即可添加 Anaconda Python 免费仓库。
 
 运行 `conda install numpy` 测试一下吧。
