@@ -7,9 +7,9 @@ menu:
   时间轴: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
-  清单||fas fa-list:
-    音乐: /music/ || fas fa-music
-    电影: /movies/ || fas fa-video
+  #清单||fas fa-list:
+  #  音乐: /music/ || fas fa-music
+  #  电影: /movies/ || fas fa-video
   链接: /link/ || fas fa-link
   关于: /about/ || fas fa-heart
 
@@ -509,7 +509,7 @@ enter_transitions: true
 # canvas_ribbon (靜止彩帶背景)
 # See: https://github.com/hustcc/ribbon.js
 canvas_ribbon:
-  enable: false
+  enable: true
   size: 150
   alpha: 0.6
   zIndex: -1
