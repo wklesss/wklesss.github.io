@@ -8,12 +8,12 @@ subtitle: wkless'blog
 description: 学习记录网站
 keywords:
 author: wkless
-language: zh-Hans
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://kkkblog.tk
 # permalink: :year/:month/:day/:title/
 permalink: post/:abbrlink.html
 abbrlink:
