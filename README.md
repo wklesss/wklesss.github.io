@@ -53,9 +53,6 @@ git push
 git pull
 ```
 
-参考：
-
-[使用hexo，如果换了电脑怎么更新博客？]: https://www.zhihu.com/question/21193762
-
-
-
+> 参考：
+>
+> [使用hexo，如果换了电脑怎么更新博客？](https://www.zhihu.com/question/21193762)
