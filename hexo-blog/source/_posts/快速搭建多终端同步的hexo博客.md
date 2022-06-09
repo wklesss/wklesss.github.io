@@ -163,9 +163,9 @@ npm install hexo-deployer-git --save
 
 搞定，之后按照步骤 5 即可完成上传。
 
-7. 参考
-
------
-
-[https://www.zhihu.com/question/21193762](https://www.zhihu.com/question/21193762)  
-[http://blog.csdn.net/zoeyyeoz/article/details/51143613](http://blog.csdn.net/zoeyyeoz/article/details/51143613)
+> 参考
+>
+> -----
+>
+> [使用hexo，如果换了电脑怎么更新博客？](https://www.zhihu.com/question/21193762)  
+> [［整理/转载］Github＋HEXO (Mac)](http://blog.csdn.net/zoeyyeoz/article/details/51143613)
