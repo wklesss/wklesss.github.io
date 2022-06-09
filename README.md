@@ -1,7 +1,7 @@
 ## hexo博客根目录
 [这是网站](https://wklesss.github.io/)
 
-# 更换电脑后操作
+### 更换电脑后操作
 ```bash
 sudo npm install hexo-cli -g
 ```
